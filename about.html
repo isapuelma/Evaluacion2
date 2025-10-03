@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Isabel Puelma - Sobre Mí</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>ISABEL PUELMA</h1>
+                <p>Diseñadora Gráfica</p>
+            </header>
+
+            <nav class="nav">
+                <a href="index.html">Portafolio</a>
+                <a href="about.html" class="active">Sobre mí</a>
+            </nav>
+
+            <section class="gallery about-section">
+                <div class="gallery-grid">
+                    <h2>Hola, soy Isabel. Diseñadora con más de 8 años de experiencia.</h2>
+
+                    <p>
+                        Mi pasión es transformar ideas complejas en soluciones visuales claras y atractivas. Me especializo en Branding y ilustración, asegurando que cada proyecto no solo se vea bien, sino que también funcione de manera eficiente para el usuario final.
+                    </p>
+
+                    <p>
+                        He trabajado construyendo marcas sólidas que resuenen con su audiencia. Mi proceso se centra en la investigación, la conceptualización y una ejecución meticulosa. Siempre estoy lista para un
+                        nuevo desafío creativo.
+                    </p>
+
+                    <h3>Habilidades Clave:</h3>
+                    <ul>
+                        <li>Branding y estrategia visual</li>
+                        <li>Adobe Creative Suite (Illustrator, Photoshop)</li>
+                        <li>Figma y Fushion 360° para prototipado</li>
+                    </ul>
+
+                    <h3>Proyectos a lo Largo del Tiempo</h3>
+                    <div class="chart-container"
+                    style="max-width: 700px;margin: 20px auto 40px auto;">
+                        <canvas id="progresoHabilidades"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>© 2025 Isabel Puelma. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://www.behance.net/isabelpuelma">Behance</a>
+                    <a href="https://www.linkedin.com/in/isabel-puelma">LinkedIn</a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+
+            const ctx = document.getElementById("progresoHabilidades");
+            const labels = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"];
+            const data = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Proyectos Finalizados", 
+                        data: [0, 2, 3, 0, 1, 0, 3], 
+                        fill: false,
+                        borderColor: "rgb(75, 192, 192)",
+                        tension: 0.1,
+                    },
+                ],
+            };
+
+            
+            new Chart(ctx, {
+                type: "line",
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: "Proyectos 2025", 
+                        },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: "Unidades de Métrica",
+                            },
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: "Mes",
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
