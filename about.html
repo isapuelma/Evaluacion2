@@ -58,15 +58,15 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script>
-
+            // El código JS está bien
             const ctx = document.getElementById("progresoHabilidades");
             const labels = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"];
             const data = {
                 labels: labels,
                 datasets: [
                     {
-                        label: "Proyectos Finalizados", 
-                        data: [0, 2, 3, 0, 1, 0, 3], 
+                        label: "Proyectos Finalizados",  
+                        data: [0, 2, 3, 0, 1, 0, 3],  
                         fill: false,
                         borderColor: "rgb(75, 192, 192)",
                         tension: 0.1,
@@ -80,6 +80,8 @@
                 data: data,
                 options: {
                     responsive: true,
+                    // Añade esto para asegurar que toma la altura del CSS (la que corregimos)
+                    maintainAspectRatio: false, 
                     plugins: {
                         title: {
                             display: true,
@@ -98,10 +100,11 @@
                             title: {
                                 display: true,
                                 text: "Mes",
+                            },
                         },
                     },
                 },
             });
         </script>
-    </body>
+        </body>
 </html>
